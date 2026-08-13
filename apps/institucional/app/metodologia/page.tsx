@@ -157,9 +157,12 @@ export default function Metodologia() {
             ]}
           />
           <Nota>
-            Desde maio de 2026 a NR-1 exige gestão formal de riscos psicossociais no trabalho,
-            incluindo a carga cognitiva imposta por desenho organizacional. A CCS deixa de ser
-            indicador interno e passa a ser variável de conformidade.
+            A obrigatoriedade de gerenciamento formal dos fatores de risco psicossocial está em
+            vigor desde maio de 2025. Desde 26 de maio de 2026, a fiscalização da NR-1 tem caráter
+            punitivo, com possibilidade efetiva de autuação para organizações que não comprovem
+            essa gestão. A NR-17, de ergonomia, alcança a sobrecarga gerada por retrabalho e
+            processo mal desenhado. A CCS deixa de ser indicador interno e passa a ser variável de
+            conformidade.
           </Nota>
         </Envelope>
       </Secao>

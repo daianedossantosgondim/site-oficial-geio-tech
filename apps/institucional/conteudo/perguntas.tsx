@@ -90,9 +90,9 @@ export const PERGUNTAS_FRAMEWORK: Pergunta[] = [
   {
     pergunta: "O que a NR-1 tem a ver com isso?",
     resposta:
-      "Desde maio de 2026 a NR-1 exige gestão formal de riscos psicossociais no trabalho, incluindo carga cognitiva excessiva decorrente do desenho organizacional. A CCS calculada na Varredura é registro documental dessa gestão.",
+      "A obrigatoriedade de gerenciamento formal dos fatores de risco psicossocial está em vigor desde maio de 2025. Desde 26 de maio de 2026, a fiscalização da NR-1 tem caráter punitivo, com possibilidade efetiva de autuação para quem não comprove essa gestão. A CCS calculada na Varredura é registro documental dessa gestão.",
     textoSimples:
-      "Desde maio de 2026 a NR-1 exige gestão formal de riscos psicossociais, incluindo carga cognitiva decorrente do desenho organizacional. A CCS é registro documental dessa gestão.",
+      "Obrigatória desde maio de 2025, com fiscalização punitiva da NR-1 desde 26 de maio de 2026. A CCS calculada na Varredura é registro documental dessa gestão.",
   },
   {
     pergunta: "Há suporte após a entrega?",

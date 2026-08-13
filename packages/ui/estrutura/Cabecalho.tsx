@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Simbolo } from "../primitivos/Simbolo";
+import { Lockup } from "../primitivos/Lockup";
 
 export type ItemNavegacao = { rotulo: string; href: string };
 
@@ -25,8 +25,7 @@ export function Cabecalho({ itens }: { itens: ItemNavegacao[] }) {
     <header className="topo">
       <div className="topo-interno">
         <Link className="marca" href="/" aria-current={rota === "/" ? "page" : undefined}>
-          <Simbolo />
-          <span>GEIO</span>
+          <Lockup altura={22} />
         </Link>
         <nav className="navegacao" aria-label="Navegação principal">
           {itens.map((item) => (

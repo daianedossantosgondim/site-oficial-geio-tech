@@ -88,7 +88,6 @@ export default function Implantacao() {
             />
             <Acao
               href={`mailto:${marca.email}?subject=${ASSUNTO}`}
-              expectativa="Abre seu cliente de e-mail com o assunto preenchido."
               valor="O enquadramento vem na resposta."
             >
               Solicitar por e-mail

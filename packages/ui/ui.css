@@ -150,7 +150,9 @@ main { display: block; }
   gap: 0.6rem;
 }
 
-.marca svg { width: 20px; height: 20px; display: block; flex-shrink: 0; }
+/* O lockup tem proporção própria: fixar largura o deformaria. A altura
+   manda, a largura acompanha. */
+.marca svg { height: 22px; width: auto; display: block; flex-shrink: 0; }
 
 .navegacao {
   display: flex;
@@ -685,3 +687,39 @@ td.valor { font-family: var(--fonte-dados); font-variant-numeric: tabular-nums; 
 .espaco-acima-curto { margin-top: 0.75rem; }
 .espaco-acima-minimo { margin-top: 0.5rem; }
 .nota-solta { border: none; padding: 0; margin-top: 0.4rem; }
+
+/* ---------- Retrato institucional ----------
+   A foto tem fundo cinza e o site é quase preto. Sem moldura ela
+   flutuaria como um retângulo claro solto. Emoldurada, o contraste
+   vira intenção — e repete a gramática da própria marca, que é uma
+   moldura. */
+
+.retrato {
+  margin: 0;
+  border: 1px solid var(--borda);
+  background: var(--superficie);
+  padding: 10px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.retrato picture,
+.retrato img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Cabeçalho do Sobre: retrato à esquerda, identificação à direita.
+   Empilha no celular, com o retrato antes do texto. */
+.apresentacao {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .apresentacao { grid-template-columns: 1fr; gap: 1.75rem; }
+  .retrato { max-width: 260px; }
+}

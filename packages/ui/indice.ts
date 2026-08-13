@@ -3,6 +3,8 @@ export { Secao, Heroi, SecaoCabecalho } from "./primitivos/Secao";
 export { Pilha, Grade, DuasColunas, Rotulo, Nota } from "./primitivos/Layout";
 export { Acao } from "./primitivos/Acao";
 export { Simbolo } from "./primitivos/Simbolo";
+export { Lockup } from "./primitivos/Lockup";
+export { Retrato } from "./primitivos/Retrato";
 
 export { ListaTecnica } from "./compostos/ListaTecnica";
 export type { ItemTecnico } from "./compostos/ListaTecnica";
