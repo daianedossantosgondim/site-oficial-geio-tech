@@ -1,0 +1,687 @@
+/* ============================================================
+   GEIO — Camadas Canônica e Metodológica
+   Primitivos e Compostos. Nenhuma cor literal: tudo vem de
+   @geio/tokens. Nenhuma regra aqui conhece uma rota específica.
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--preto-profundo);
+  color: var(--texto-leitura);
+  font-family: var(--fonte-corpo);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--cobalto-legivel);
+  outline-offset: 3px;
+}
+
+/* Link de salto: invisivel ate receber foco por teclado */
+.salto {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--superficie-alta);
+  color: var(--texto);
+  border: 1px solid var(--cobalto-legivel);
+  padding: 0.75rem 1.25rem;
+  z-index: 100;
+  text-decoration: none;
+}
+.salto:focus { left: 1rem; top: 1rem; }
+
+/* ---------- Tipografia ---------- */
+
+h1, h2, h3 {
+  color: var(--texto);
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  text-wrap: balance;
+  margin: 0;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2rem, 4.5vw, 3.15rem); }
+h2 { font-size: clamp(1.35rem, 2.4vw, 1.75rem); }
+h3 { font-size: 1.05rem; letter-spacing: -0.01em; }
+
+p { margin: 0; max-width: var(--largura-texto); }
+
+.rotulo {
+  font-family: var(--fonte-dados);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--texto-tenue);
+  margin: 0;
+}
+
+.dado {
+  font-family: var(--fonte-dados);
+  font-variant-numeric: tabular-nums;
+}
+
+.subtitulo {
+  color: var(--texto-fraco);
+  font-size: 1.075rem;
+}
+
+/* ---------- Layout ---------- */
+
+.envelope {
+  max-width: var(--largura-total);
+  margin: 0 auto;
+  padding: 0 1.75rem;
+}
+
+main { display: block; }
+
+.secao {
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--borda);
+}
+
+.secao:first-of-type { border-top: none; }
+
+.secao-cabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2.25rem;
+}
+
+.pilha {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pilha-larga {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ---------- Navegação ---------- */
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--borda);
+}
+
+.topo-interno {
+  max-width: var(--largura-total);
+  margin: 0 auto;
+  padding: 1rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.marca {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.marca svg { width: 20px; height: 20px; display: block; flex-shrink: 0; }
+
+.navegacao {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.navegacao a {
+  text-decoration: none;
+  color: var(--texto-fraco);
+  font-size: 0.875rem;
+  transition: color 0.15s;
+}
+
+.navegacao a:hover { color: var(--texto); }
+.navegacao a[aria-current="page"] { color: var(--cobalto-legivel); }
+
+@media (max-width: 860px) {
+  .topo-interno { flex-direction: column; align-items: flex-start; gap: 0.9rem; }
+  .navegacao { gap: 1.1rem; }
+}
+
+/* ---------- Herói ---------- */
+
+.heroi {
+  padding: 6rem 0 4.5rem;
+}
+
+.heroi h1 { max-width: 20ch; }
+
+.heroi .subtitulo {
+  margin-top: 1.4rem;
+  max-width: 52ch;
+}
+
+/* ---------- Ação única ---------- */
+
+.acao {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.6rem;
+  background: var(--azul-cobalto);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.925rem;
+  font-weight: 500;
+  padding: 0.85rem 1.5rem;
+  border: 1px solid var(--azul-cobalto);
+  transition: background 0.15s, color 0.15s;
+}
+
+.acao:hover { background: transparent; color: var(--azul-cobalto); }
+
+.contato-linha {
+  font-size: 0.925rem;
+  color: var(--texto-fraco);
+}
+
+.contato-linha a { color: var(--texto); text-underline-offset: 3px; }
+
+/* ---------- Grades ---------- */
+
+.grade {
+  display: grid;
+  gap: 1px;
+  background: var(--borda);
+  border: 1px solid var(--borda);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.grade > * {
+  background: var(--superficie);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.grade p { color: var(--texto-fraco); font-size: 0.925rem; }
+
+.duas-colunas {
+  display: grid;
+  gap: 1px;
+  background: var(--borda);
+  border: 1px solid var(--borda);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.duas-colunas > * {
+  background: var(--superficie);
+  padding: 1.75rem;
+}
+
+.duas-colunas ul {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  color: var(--texto-fraco);
+  font-size: 0.95rem;
+}
+
+/* ---------- Listas técnicas ---------- */
+
+.lista-tecnica {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--borda);
+}
+
+.lista-tecnica li {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 1.25rem;
+  padding: 1.05rem 0;
+  border-bottom: 1px solid var(--borda);
+  align-items: baseline;
+}
+
+.lista-tecnica .codigo {
+  font-family: var(--fonte-dados);
+  font-size: 0.78rem;
+  color: var(--texto-tenue);
+  letter-spacing: 0.05em;
+}
+
+.lista-tecnica .descricao { color: var(--texto-fraco); font-size: 0.95rem; }
+.lista-tecnica strong { color: var(--texto); font-weight: 500; }
+
+@media (max-width: 620px) {
+  .lista-tecnica li { grid-template-columns: 1fr; gap: 0.3rem; }
+}
+
+/* ---------- Sequência da esteira ---------- */
+
+.sequencia {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.sequencia a, .sequencia span.etapa {
+  border: 1px solid var(--borda-forte);
+  padding: 0.6rem 1.1rem;
+  text-decoration: none;
+  color: var(--texto);
+  transition: border-color 0.15s;
+}
+
+.sequencia a:hover { border-color: var(--azul-cobalto); }
+.sequencia span.etapa { color: var(--texto-tenue); }
+.sequencia .seta { color: var(--texto-tenue); }
+
+/* ---------- Tabelas ---------- */
+
+.envolve-tabela { overflow-x: auto; border: 1px solid var(--borda); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.925rem;
+  min-width: 520px;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--borda);
+  vertical-align: top;
+}
+
+thead th {
+  font-family: var(--fonte-dados);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--texto-tenue);
+  font-weight: 400;
+  background: var(--superficie);
+}
+
+tbody tr:last-child td { border-bottom: none; }
+td { color: var(--texto-fraco); }
+td:first-child { color: var(--texto); }
+td.valor { font-family: var(--fonte-dados); font-variant-numeric: tabular-nums; color: var(--texto); white-space: nowrap; }
+
+/* ---------- Fórmula ---------- */
+
+.formula {
+  font-family: var(--fonte-dados);
+  font-size: 0.9rem;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-left: 2px solid var(--azul-cobalto);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  color: var(--texto);
+}
+
+/* ---------- Nota / transição ---------- */
+
+.nota {
+  border-left: 1px solid var(--borda-forte);
+  padding-left: 1.25rem;
+  color: var(--texto-fraco);
+  font-size: 0.925rem;
+}
+
+.nota a { color: var(--texto); }
+
+/* ---------- Simulador ---------- */
+
+.simulador {
+  border: 1px solid var(--borda);
+  background: var(--superficie);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.campos {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.campo { display: flex; flex-direction: column; gap: 0.45rem; }
+
+.campo label {
+  font-family: var(--fonte-dados);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--texto-tenue);
+}
+
+.campo input {
+  background: var(--preto-profundo);
+  border: 1px solid var(--borda-forte);
+  color: var(--texto);
+  padding: 0.7rem 0.85rem;
+  font-family: var(--fonte-dados);
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.botao-secundario {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--borda-forte);
+  color: var(--texto);
+  padding: 0.75rem 1.35rem;
+  font-family: var(--fonte-corpo);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.botao-secundario:hover { border-color: var(--azul-cobalto); }
+
+.erro {
+  border-left: 2px solid var(--cobalto-legivel);
+  background: var(--superficie-alta);
+  padding: 0.85rem 1.1rem;
+  font-size: 0.9rem;
+  color: var(--texto);
+}
+
+.erro[hidden] { display: none; }
+
+.campo input[aria-invalid="true"] { border-color: var(--cobalto-legivel); }
+
+.resultado {
+  border-top: 1px solid var(--borda);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.resultado[hidden] { display: none; }
+
+.resultado-linhas {
+  display: grid;
+  gap: 1px;
+  background: var(--borda);
+  border: 1px solid var(--borda);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.resultado-linhas > div {
+  background: var(--superficie-alta);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.resultado-linhas .numero {
+  font-family: var(--fonte-dados);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.5rem;
+  color: var(--texto);
+}
+
+/* ---------- Oferta revelada pós-simulação ----------
+   O produto não existe na página até a pessoa ter calculado o próprio
+   indicador. Borda esquerda em cobalto marca a transição de "ferramenta
+   pública" para "oferta" sem usar urgência. */
+
+.oferta {
+  border: 1px solid var(--borda);
+  border-left: 2px solid var(--azul-cobalto);
+  background: var(--superficie);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  animation: revelar 0.4s ease both;
+}
+
+.oferta[hidden] { display: none; }
+
+.oferta-topo { display: flex; flex-direction: column; gap: 0.8rem; }
+.oferta .grade { border-color: var(--borda-forte); }
+.oferta .grade > * { background: var(--superficie-alta); }
+
+@keyframes revelar {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oferta { animation: none; }
+}
+
+/* ---------- FAQ ---------- */
+
+.faq { border-top: 1px solid var(--borda); }
+
+.faq details {
+  border-bottom: 1px solid var(--borda);
+  padding: 1.15rem 0;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary .codigo {
+  font-family: var(--fonte-dados);
+  font-size: 0.78rem;
+  color: var(--texto-tenue);
+}
+
+.faq details p {
+  margin-top: 0.85rem;
+  padding-left: 3rem;
+  color: var(--texto-fraco);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 620px) {
+  .faq details p { padding-left: 0; }
+}
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+  border-top: 1px solid var(--borda);
+  padding: 3rem 0 2.5rem;
+  margin-top: 1rem;
+}
+
+.rodape-grade {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-bottom: 2.5rem;
+}
+
+.rodape-bloco { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.rodape-bloco a, .rodape-bloco span {
+  color: var(--texto-fraco);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.rodape-bloco a:hover { color: var(--texto); }
+
+.rodape-base {
+  border-top: 1px solid var(--borda);
+  padding-top: 1.5rem;
+  color: var(--texto-tenue);
+  font-size: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+/* ---------- Núcleo paramétrico: calculadora + malha ----------
+   A malha não tem estado próprio — é função dos três campos do
+   simulador. Em telas estreitas ela vai para baixo do formulário,
+   nunca some: é o argumento visual do produto. */
+
+.parametrico-grade {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+@media (max-width: 880px) {
+  .parametrico-grade { grid-template-columns: 1fr; }
+}
+
+.campos-empilhados { grid-template-columns: 1fr; }
+
+.parametrico {
+  margin: 0;
+  border: 1px solid var(--borda);
+  background: var(--superficie);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* aspect-ratio reserva a caixa antes de qualquer desenho:
+   a figura nunca empurra o conteúdo abaixo dela. CLS = 0. */
+.parametrico svg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+.parametrico figcaption {
+  letter-spacing: 0.06em;
+  text-transform: none;
+  line-height: 1.5;
+  color: var(--texto-fraco);
+}
+
+/* ---------- Campos: agrupamento e âncora contextual ----------
+   O <fieldset> existe pela semântica, não pelo visual: os três
+   parâmetros são uma unidade ("minha operação"), não três
+   perguntas soltas. A moldura padrão do navegador é removida. */
+
+.campos-grupo {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.campos-grupo legend {
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+/* Texto de apoio colado ao campo: a explicação chega junto da
+   decisão, não numa nota de rodapé que exige guardar contexto. */
+.ajuda {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--texto-tenue);
+  margin: 0;
+  max-width: 42ch;
+}
+
+/* ---------- Leitura humana do resultado ----------
+   O número é dado bruto. Esta frase é o mesmo número na unidade em
+   que a decisão acontece. Filete cinza, não cobalto: aqui o registro
+   é de repouso, e o cobalto está reservado para veto e ação. */
+
+.leitura {
+  border-left: 1px solid var(--borda-forte);
+  padding-left: 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--texto);
+  max-width: 54ch;
+}
+
+.nota-limite {
+  border: none;
+  padding-left: 0;
+  font-size: 0.85rem;
+  max-width: 58ch;
+}
+
+/* A área de leitura tem altura mínima e existe desde o primeiro
+   paint, com travessão no lugar do número. Nada aparece do nada
+   empurrando o conteúdo abaixo. */
+.resultado {
+  min-height: 13rem;
+}
+
+@media (max-width: 880px) {
+  .resultado { min-height: 0; }
+}
+
+/* ---------- Utilitários de espaçamento ----------
+   Existem para que a página não precise de atributo style=, e
+   com isso a CSP possa dispensar 'unsafe-inline' em style-src. */
+
+.espaco-acima { margin-top: 1.5rem; }
+.espaco-acima-largo { margin-top: 1.75rem; }
+.respiro-abaixo { padding-bottom: 3rem; }
+
+.sequencia span.etapa-atual {
+  color: var(--texto);
+  border-color: var(--cobalto-legivel);
+}
+
+.espaco-acima-curto { margin-top: 0.75rem; }
+.espaco-acima-minimo { margin-top: 0.5rem; }
+.nota-solta { border: none; padding: 0; margin-top: 0.4rem; }

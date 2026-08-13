@@ -1,0 +1,10 @@
+{
+  "name": "@geio/instrumentos",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./indice.ts",
+  "types": "./indice.ts",
+  "dependencies": {
+    "@geio/tokens": "*"
+  }
+}

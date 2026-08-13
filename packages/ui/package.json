@@ -1,0 +1,14 @@
+{
+  "name": "@geio/ui",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./indice.ts",
+  "types": "./indice.ts",
+  "exports": {
+    ".": "./indice.ts",
+    "./ui.css": "./ui.css"
+  },
+  "dependencies": {
+    "@geio/tokens": "*"
+  }
+}

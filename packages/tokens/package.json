@@ -1,0 +1,11 @@
+{
+  "name": "@geio/tokens",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./indice.ts",
+  "types": "./indice.ts",
+  "exports": {
+    ".": "./indice.ts",
+    "./tokens.css": "./tokens.css"
+  }
+}

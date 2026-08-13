@@ -1,0 +1,84 @@
+name: Qualidade
+
+# Veto estrutural aplicado ao próprio repositório: um pull request que
+# quebra contraste, teste, tipo, lint ou orçamento de performance não
+# entra. A regra não pede boa vontade — ela impede.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verificar:
+    name: Tokens, testes, tipos e lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar
+        run: npm ci
+
+      - name: Contraste dos tokens
+        run: npm run contraste
+
+      - name: Suíte da calculadora
+        run: npm run teste
+
+      - name: Tipos
+        run: npm run tipos
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+  acessibilidade:
+    name: Acessibilidade e Core Web Vitals
+    runs-on: ubuntu-latest
+    needs: verificar
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.14.x
+          lhci autorun --config=./lighthouserc.json
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: axe — WCAG 2.1 AA
+        run: |
+          npm install -g @axe-core/cli
+          npm run start --workspace=@geio/institucional &
+          npx wait-on http://localhost:3100 --timeout 60000
+          axe http://localhost:3100 \
+              http://localhost:3100/metodologia \
+              http://localhost:3100/diagnostico-preliminar-parametrico \
+              http://localhost:3100/varredura-in-company \
+              http://localhost:3100/implantacao-e-integracao \
+              http://localhost:3100/sobre \
+              http://localhost:3100/faq \
+              http://localhost:3100/transparencia \
+              http://localhost:3100/termos \
+              http://localhost:3100/privacidade \
+              --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
+              --exit
