@@ -1,0 +1,27 @@
+{
+  "name": "@geio/institucional",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3100",
+    "build": "next build",
+    "start": "next start -p 3100",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@geio/tokens": "*",
+    "@geio/ui": "*",
+    "@geio/instrumentos": "*",
+    "next": "15.5.23",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.23",
+    "typescript": "^5"
+  }
+}

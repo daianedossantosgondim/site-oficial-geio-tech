@@ -1,0 +1,47 @@
+/* ============================================================
+   GEIO — Tokens de identidade
+   Fonte de verdade: marca-geio/MANUAL-DE-MARCA.md (GEIO-MRC-001),
+   homologado em 2026-08-13. Nenhum valor aqui é escolha de
+   implementação: todos vêm do manual ou são derivados declarados
+   nele. Alterar exige alterar o manual antes.
+
+   Tema escuro único — mandato do brandbook (Preto Profundo como
+   base estrutural), não omissão de tema claro.
+   ============================================================ */
+
+:root {
+  /* Oficiais (v1.4, 8.4) */
+  --preto-profundo: #0a0a0a;
+  --cinza-tecnico: #b0b0b0;
+  --azul-cobalto: #1a3aff;
+
+  /* Derivados — neutros com viés azulado em direção ao acento,
+     em vez de cinza puro (que leria como não-escolhido) */
+  --superficie: #101014;
+  --superficie-alta: #16161c;
+  --borda: #1e1e26;
+  --borda-forte: #2a2a34;
+  --texto: #f2f2f4;
+  /* Corpo longo sobre fundo escuro: branco puro produz halação e cansa a
+     leitura. #e6e6ea mede 15,91:1 — continua AAA, com menos ruído.
+     Títulos e números continuam em --texto, que é onde o brilho ajuda. */
+  --texto-leitura: #e6e6ea;
+  --texto-fraco: var(--cinza-tecnico);
+  /* #6e6e78 media 3,93:1 sobre o preto e reprova AA em texto pequeno.
+     #7d7d88 mede 4,87:1 e mantem o registro discreto. */
+  --texto-tenue: #7d7d88;
+
+  /* O cobalto oficial mede 2,92:1 sobre o preto: reprova como texto e como
+     indicador de foco. Continua correto como PREENCHIMENTO (branco sobre ele
+     da 6,79:1). Este derivado existe so para quando a cor precisa virar letra
+     ou contorno. Ver marca-geio/MANUAL-DE-MARCA.md §2.1 */
+  --cobalto-legivel: #5b7bff;
+
+  --largura-texto: 68ch;
+  --largura-total: 1080px;
+
+  --fonte-corpo: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --fonte-dados: ui-monospace, "SF Mono", "Cascadia Mono", Consolas,
+    "Liberation Mono", monospace;
+}

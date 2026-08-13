@@ -1,0 +1,23 @@
+{
+  "name": "geio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Ecossistema digital GEIO — site institucional e instrumentos",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@geio/institucional",
+    "build": "npm run build --workspace=@geio/institucional",
+    "start": "npm run start --workspace=@geio/institucional",
+    "lint": "npm run lint --workspace=@geio/institucional",
+    "tipos": "tsc --noEmit -p apps/institucional/tsconfig.json",
+    "contraste": "node scripts/verificar-contraste.mjs",
+    "teste": "node --test packages/instrumentos/testes/*.test.mjs",
+    "verificar": "npm run contraste && npm run teste && npm run tipos && npm run lint"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
