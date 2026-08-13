@@ -1,4 +1,4 @@
-import { Envelope, Grade, Heroi, ListaTecnica, Nota, Pilha, Secao, SecaoCabecalho } from "@geio/ui";
+import { Envelope, Grade, Heroi, ListaTecnica, Nota, Pilha, Retrato, Secao, SecaoCabecalho } from "@geio/ui";
 import { marca } from "@geio/tokens";
 import { metadadosDaRota } from "@/conteudo/metadados";
 
@@ -14,11 +14,16 @@ export default function Sobre() {
     <>
       <Heroi>
         <Envelope>
-          <Pilha>
-            <p className="rotulo">Custódia do framework</p>
-            <h1>Daiane Gondim</h1>
-            <p className="subtitulo">Criadora, Arquiteta-Chefe e custodiante formal do framework GEIO.</p>
-          </Pilha>
+          <div className="apresentacao">
+            <Retrato base="/daiane-gondim" alt="Retrato de Daiane Gondim" prioritario />
+            <Pilha>
+              <p className="rotulo">Custódia do framework</p>
+              <h1>Daiane Gondim</h1>
+              <p className="subtitulo">
+                Criadora, Arquiteta-Chefe e custodiante formal do framework GEIO.
+              </p>
+            </Pilha>
+          </div>
         </Envelope>
       </Heroi>
 
@@ -29,10 +34,40 @@ export default function Sobre() {
             itens={[
               { codigo: "Principal", descricao: <><strong>Técnica em Planejamento e Controle da Produção</strong> — SENAI-MG, eixo Controle e Processos Industriais.</> },
               { codigo: "Em curso", descricao: <><strong>Computação Gráfica</strong> — Centro Universitário de Patos de Minas (UNIPAM).</> },
+              { codigo: "Complementar", descricao: <><strong>NR-1 e Riscos Psicossociais</strong> — SEST SENAT.</> },
               { codigo: "Complementar", descricao: <><strong>Tecnologia e Sustentabilidade</strong> — UCB.</> },
-              { codigo: "Complementar", descricao: <><strong>Supply Chain e Logistics</strong> — MIT OpenCourseWare.</> },
+              { codigo: "Complementar", descricao: <><strong>Supply Chain e Logistics</strong> — MIT OpenCourseWare. Cursos listados abaixo.</> },
             ]}
           />
+        </Envelope>
+      </Secao>
+
+      <Secao rotuladaPor="titulo-mit">
+        <Envelope>
+          <SecaoCabecalho
+            rotulo="MIT OpenCourseWare"
+            titulo="Cursos cursados"
+            tituloId="titulo-mit"
+            subtitulo="Material aberto do Massachusetts Institute of Technology, com o código de cada disciplina."
+          />
+          <ListaTecnica
+            itens={[
+              { codigo: "16.842", descricao: "Fundamentals of Systems Engineering" },
+              { codigo: "15.762J", descricao: "Supply Chain Planning" },
+              { codigo: "15.763J", descricao: "Manufacturing Systems and Supply Chain Design" },
+              { codigo: "15.772J", descricao: "D-Lab: Supply Chain" },
+              { codigo: "ESD.260J", descricao: "Logistics Systems" },
+              { codigo: "ESD.273J", descricao: "Logistics and Supply Chain Management" },
+              { codigo: "ESD.290", descricao: "Special Topics in Supply Chain Management" },
+              { codigo: "ESD.S43", descricao: "Green Supply Chain Management" },
+              { codigo: "1.46", descricao: "Strategic Management in the Design and Construction Value Chain" },
+            ]}
+          />
+          <Nota className="espaco-acima-largo">
+            <strong>16.842 — Fundamentals of Systems Engineering</strong> é a disciplina que
+            sustenta a base teórica declarada do framework: a Engenharia de Sistemas, citada em{" "}
+            <a href="/metodologia">Metodologia</a> como referência do escopo e dos limites do GEIO.
+          </Nota>
         </Envelope>
       </Secao>
 

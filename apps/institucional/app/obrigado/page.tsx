@@ -166,7 +166,6 @@ export default function Obrigado() {
           <Acao
             href="/varredura-in-company"
             expectativa="Escopo, entregáveis e faixas de investimento da etapa 2."
-            valor="Sem compromisso de contratação."
           >
             Conhecer a Varredura Paramétrica In-Company
           </Acao>

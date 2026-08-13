@@ -97,13 +97,7 @@ export default function Varredura() {
               tituloId="titulo-solicitacao"
               subtitulo="Informe o número de setores e o segmento da operação. O enquadramento de escopo e o cronograma são definidos na resposta."
             />
-            <Acao
-              href={`mailto:${marca.email}?subject=${ASSUNTO}`}
-              expectativa="Abre seu cliente de e-mail com o assunto preenchido."
-              valor="Sem compromisso de contratação."
-            >
-              Solicitar por e-mail
-            </Acao>
+            <Acao href={`mailto:${marca.email}?subject=${ASSUNTO}`}>Solicitar por e-mail</Acao>
             <Nota className="espaco-acima-largo">
               Empresas que concluem a Varredura têm acesso à{" "}
               <Link href="/implantacao-e-integracao">Implantação e Integração</Link>, que executa o
