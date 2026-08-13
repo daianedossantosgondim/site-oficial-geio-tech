@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/termos", 0.3],
     ["/privacidade", 0.3],
   ];
+  // /obrigado fica de fora de propósito: é destino de checkout, não
+  // conteúdo público. Também declara noindex na própria rota.
   const agora = new Date();
   return rotas.map(([caminho, priority]) => ({
     url: `${marca.site}${caminho}`,

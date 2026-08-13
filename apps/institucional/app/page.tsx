@@ -118,8 +118,9 @@ export default function Home() {
               <p className="rotulo">Vetor 02</p>
               <h3>Risco Cognitivo e Ocupacional</h3>
               <p>
-                Sobrecarga imposta às equipes pelo próprio desenho da operação. Desde maio de 2026 a
-                NR-1 exige gestão formal de riscos psicossociais.
+                Sobrecarga imposta às equipes pelo próprio desenho da operação. A gestão formal
+                dos fatores de risco psicossocial é obrigatória desde maio de 2025, e desde 26 de
+                maio de 2026 a fiscalização da NR-1 tem caráter punitivo.
               </p>
             </div>
             <div>
