@@ -150,7 +150,9 @@ main { display: block; }
   gap: 0.6rem;
 }
 
-.marca svg { width: 20px; height: 20px; display: block; flex-shrink: 0; }
+/* O lockup tem proporção própria: fixar largura o deformaria. A altura
+   manda, a largura acompanha. */
+.marca svg { height: 22px; width: auto; display: block; flex-shrink: 0; }
 
 .navegacao {
   display: flex;
