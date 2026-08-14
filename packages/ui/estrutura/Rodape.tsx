@@ -31,6 +31,9 @@ export function Rodape() {
           </div>
         </div>
         <div className="rodape-base">
+          {/* O significado da sigla em toda página: é o dado que sustenta a
+              entidade, tanto para quem lê quanto para quem indexa. */}
+          <span>GEIO — {marca.siglaExtenso}</span>
           <span>© 2026 GEIO Gestão Inteligente</span>
           <span>{marca.incubadora}</span>
         </div>

@@ -65,7 +65,7 @@ export default function Home() {
       <Heroi>
         <Envelope>
           <Pilha>
-            <p className="rotulo">Gestão Estrutural da Incompatibilidade Organizacional</p>
+            <p className="rotulo">GEIO — Gestão Estrutural da Incompatibilidade Organizacional</p>
             <h1>A desordem operacional não é falha humana. É falha de arquitetura.</h1>
             <p className="subtitulo">
               GEIO estrutura decisões operacionais e as torna previsíveis. Comece medindo o que a

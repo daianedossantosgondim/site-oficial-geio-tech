@@ -20,7 +20,8 @@ export default function Sobre() {
               <p className="rotulo">Custódia do framework</p>
               <h1>Daiane Gondim</h1>
               <p className="subtitulo">
-                Criadora, Arquiteta-Chefe e custodiante formal do framework GEIO.
+                Criadora, Arquiteta-Chefe e custodiante formal do framework GEIO — Gestão
+                Estrutural da Incompatibilidade Organizacional.
               </p>
             </Pilha>
           </div>

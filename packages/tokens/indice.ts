@@ -31,6 +31,8 @@ export const paresDeContraste = [
 export const marca = {
   nome: "GEIO Gestão Inteligente",
   descritor: "Gestão Inteligente",
+  /** O que a sigla significa. Fonte única — nunca redigitar no conteúdo. */
+  siglaExtenso: "Gestão Estrutural da Incompatibilidade Organizacional",
   cnpj: "60.525.751/0001-53",
   cidade: "Patos de Minas — MG",
   email: "daianegondim@unipam.edu.br",

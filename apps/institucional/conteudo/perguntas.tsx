@@ -74,11 +74,11 @@ export const PERGUNTAS_PRODUTO: Pergunta[] = [
 
 export const PERGUNTAS_FRAMEWORK: Pergunta[] = [
   {
-    pergunta: "GEIO é consultoria?",
+    pergunta: "O que significa GEIO, e é consultoria?",
     resposta:
-      "Não. GEIO é um framework de arquitetura operacional — princípios, método, indicadores e governança. A Varredura Paramétrica In-Company é a aplicação prática desse framework em campo, mas o framework existe independentemente dela.",
+      "GEIO é a sigla de Gestão Estrutural da Incompatibilidade Organizacional. E não, não é consultoria: é um framework de arquitetura operacional — princípios, método, indicadores e governança. A Varredura Paramétrica In-Company é a aplicação prática desse framework em campo, mas o framework existe independentemente dela.",
     textoSimples:
-      "Não. GEIO é um framework de arquitetura operacional. A Varredura In-Company é a aplicação prática dele em campo.",
+      "GEIO é a sigla de Gestão Estrutural da Incompatibilidade Organizacional — um framework de arquitetura operacional, não uma consultoria. A Varredura In-Company é a aplicação prática dele em campo.",
   },
   {
     pergunta: "Por que o preço da Varredura varia?",
