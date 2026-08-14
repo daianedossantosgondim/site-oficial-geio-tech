@@ -36,22 +36,7 @@ export default function Sobre() {
               { codigo: "Em curso", descricao: <><strong>Computação Gráfica</strong> — Centro Universitário de Patos de Minas (UNIPAM).</> },
               { codigo: "Complementar", descricao: <><strong>NR-1 e Riscos Psicossociais</strong> — SEST SENAT.</> },
               { codigo: "Complementar", descricao: <><strong>Tecnologia e Sustentabilidade</strong> — UCB.</> },
-              { codigo: "Complementar", descricao: <><strong>Supply Chain e Logistics</strong> — MIT OpenCourseWare. Cursos listados abaixo.</> },
-            ]}
-          />
-        </Envelope>
-      </Secao>
-
-      <Secao rotuladaPor="titulo-mit">
-        <Envelope>
-          <SecaoCabecalho
-            rotulo="MIT OpenCourseWare"
-            titulo="Cursos cursados"
-            tituloId="titulo-mit"
-            subtitulo="Material aberto do Massachusetts Institute of Technology, com o código de cada disciplina."
-          />
-          <ListaTecnica
-            itens={[
+              { codigo: "Complementar", descricao: <><strong>Supply Chain e Logistics</strong> — MIT OpenCourseWare.</> },
               { codigo: "16.842", descricao: "Fundamentals of Systems Engineering" },
               { codigo: "15.762J", descricao: "Supply Chain Planning" },
               { codigo: "15.763J", descricao: "Manufacturing Systems and Supply Chain Design" },
