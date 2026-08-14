@@ -17,7 +17,10 @@ export function Retrato({
   base,
   alt,
   largura = 480,
-  altura = 600,
+  // Proporção do arquivo atual (1120 × 1223). Se a foto trocar, este
+  // número troca junto — senão a caixa reservada deixa de bater com a
+  // imagem e volta a haver deslocamento no carregamento.
+  altura = 524,
   prioritario = false,
 }: {
   base: string;
