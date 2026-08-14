@@ -48,6 +48,11 @@ export default function Sobre() {
               { codigo: "1.46", descricao: "Strategic Management in the Design and Construction Value Chain" },
             ]}
           />
+          <Nota className="espaco-acima-largo">
+            <strong>16.842 — Fundamentals of Systems Engineering</strong> é a disciplina que
+            sustenta a base teórica declarada do framework: a Engenharia de Sistemas, citada em{" "}
+            <a href="/metodologia">Metodologia</a> como referência do escopo e dos limites do GEIO.
+          </Nota>
         </Envelope>
       </Secao>
 
