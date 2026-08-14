@@ -11,7 +11,7 @@ export const cores = {
   cobaltoLegivel: "#5b7bff",
   texto: "#f2f2f4",
   textoLeitura: "#e6e6ea",
-  textoTenue: "#7d7d88",
+  textoTenue: "#82828d",
   superficie: "#101014",
   superficieAlta: "#16161c",
   borda: "#1e1e26",
