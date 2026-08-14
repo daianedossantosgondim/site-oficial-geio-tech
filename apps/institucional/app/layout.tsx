@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     template: "%s | GEIO",
   },
   description:
-    "GEIO estrutura decisões operacionais e as torna previsíveis. Framework de arquitetura operacional para indústrias.",
+    `GEIO — ${marca.siglaExtenso}. Framework de arquitetura operacional para indústrias: ` +
+    "estrutura decisões operacionais e as torna previsíveis.",
   manifest: "/site.webmanifest",
   icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
 };

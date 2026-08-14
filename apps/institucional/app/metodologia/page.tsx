@@ -17,7 +17,8 @@ import { metadadosDaRota } from "@/conteudo/metadados";
 
 export const metadata = metadadosDaRota({
   titulo: "Metodologia",
-  descricao: "O framework GEIO: cinco camadas, sete críticos invariáveis e os indicadores IIO e CCS.",
+  descricao:
+    "GEIO — Gestão Estrutural da Incompatibilidade Organizacional: cinco camadas, sete Críticos Invariáveis e os indicadores IIO e CCS.",
   caminho: "/metodologia",
 });
 
