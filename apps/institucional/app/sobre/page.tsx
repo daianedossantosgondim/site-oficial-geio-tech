@@ -5,7 +5,7 @@ import { metadadosDaRota } from "@/conteudo/metadados";
 export const metadata = metadadosDaRota({
   titulo: "Sobre",
   descricao:
-    "Daiane Gondim — Arquiteta-Chefe e criadora do framework GEIO. Formação, base teórica e ecossistema de incubação.",
+    "Daiane Gondim — Arquiteta-Chefe e criadora do framework GEIO. Formação, base teórica e registro institucional.",
   caminho: "/sobre",
 });
 
