@@ -35,7 +35,6 @@ export function Rodape() {
               entidade, tanto para quem lê quanto para quem indexa. */}
           <span>GEIO — {marca.siglaExtenso}</span>
           <span>© 2026 GEIO Gestão Inteligente</span>
-          <span>{marca.incubadora}</span>
         </div>
       </div>
     </footer>

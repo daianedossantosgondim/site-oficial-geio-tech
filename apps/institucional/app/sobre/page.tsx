@@ -64,7 +64,6 @@ export default function Sobre() {
             itens={[
               { codigo: "Instituição", descricao: <><strong>geio.tech</strong> — CNPJ {marca.cnpj}, {marca.cidade}.</> },
               { codigo: "Fundação", descricao: <>Framework instituído em <strong>08 de abril de 2026</strong>, com propriedade intelectual reservada.</> },
-              { codigo: "Incubação", descricao: <>Empresa residente na <strong>Farol Incubadora de Empresas (FEPAM)</strong>, {marca.cidade}.</> },
               { codigo: "Governança", descricao: "Composição provisória unipessoal, com custódia formal declarada." },
             ]}
           />
