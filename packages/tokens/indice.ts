@@ -38,7 +38,6 @@ export const marca = {
   email: "daianegondim@unipam.edu.br",
   linkedin: "https://www.linkedin.com/in/daianegondim",
   lattes: "https://lattes.cnpq.br/4591515697537753",
-  incubadora: "Empresa residente na Farol Incubadora de Empresas (FEPAM).",
   site: "https://geio.tech",
 } as const;
 

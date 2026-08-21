@@ -13,5 +13,5 @@ export const ESTEIRA = [
   { rotulo: "Diagnóstico", href: "/diagnostico-preliminar-parametrico" },
   { rotulo: "Arquitetura", href: "/varredura-in-company" },
   { rotulo: "Implantação", href: "/implantacao-e-integracao" },
-  { rotulo: "Controle" },
+  { rotulo: "Controle (futuro PDCAction)" },
 ];
